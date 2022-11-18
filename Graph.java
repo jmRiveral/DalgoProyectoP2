@@ -11,6 +11,22 @@ class Graph{
    
     private Map<String, List<String>> adjVertices;
     
+    public ArrayList<String> V;// un arreglo de vertices
+    public String elem;
+    Graph(ArrayList<String> v, String paramElem){
+        V=v; // un arreglo de vertices
+        elem=paramElem; //un elemento de ese arreglo
+        for(int i=0;i< v.size()-1;i++){
+            if(!(v.get(i).equals(v.get(i+1)))){
+                
+                adjVertices.put(v.get(i), v);
+            }
+        }
+        
+        
+    }
+    
+    
     void addVertex(String label){
         adjVertices.putIfAbsent(label, new ArrayList<>());
     }
